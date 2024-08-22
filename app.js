@@ -101,7 +101,6 @@ function addTaskHandler(event) {
     imgUrl: event.target[3].value
   }
 
-  console.log(createTaskComponent(newTask))
   document.querySelector(".main-section__taskboard").appendChild(createTaskComponent(newTask))
 
   clearFormInputs(event)
