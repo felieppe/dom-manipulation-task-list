@@ -63,6 +63,7 @@ h2{
 .main__form__item {
   flex: 1;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .main__form__buttons{
