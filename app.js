@@ -67,7 +67,11 @@ function createTaskComponent(task) {
   return taskElement;
 }
 
-function loadTasks() {}
+function loadTasks() {
+  tasks.forEach((task) => {
+    document.querySelector(".main-section__taskboard").appendChild(createTaskComponent(task))
+  })
+}
 
 function clearFormInputs(event) {
   for (let x = 0; x < event.target.length; x++) {
