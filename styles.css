@@ -93,13 +93,14 @@ button{
 }
 
 input{
-  font-size: 3vh;
+  font-size: 2vh;
   margin-top: 1vh;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 8vh;
   max-height: 50px;
   border-radius: 3px;
   border: solid 2px lightgray;
+  padding-left: 10px;
 }
 
 .task{
