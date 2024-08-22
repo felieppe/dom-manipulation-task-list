@@ -47,7 +47,8 @@ let currentIdNumber = tasks.length;
 // Hacer una funcion que cree dinamicamente las task
 function createTaskComponent(task) {
   const taskElement = document.createElement('li')
-  taskElement.id = taskElement.id; taskElement.className = "task"
+  taskElement.id = task.id; 
+  taskElement.className = "task";
   taskElement.setAttribute("onclick", "deleteTaskHandler(event);")
 
   taskElement.innerHTML = `
@@ -89,7 +90,7 @@ function addTaskHandler(event) {
   event.preventDefault();
   
   const newTask = {
-    id: currentIdNumber,
+    id: tasks.length,
     owner: event.target[0].value,
     name: event.target[1].value,
     description: event.target[2].value,
@@ -100,6 +101,7 @@ function addTaskHandler(event) {
   document.querySelector(".main-section__taskboard").appendChild(createTaskComponent(newTask))
 
   clearFormInputs(event)
+  tasks.push(newTask)
 }
 
 // 3 - Funcion
