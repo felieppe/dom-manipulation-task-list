@@ -67,6 +67,14 @@ function createTaskComponent(task) {
 
 function loadTasks() {}
 
+function clearFormInputs(event) {
+  for (let x = 0; x < event.target.length; x++) {
+    if (event.target[x].tagName.toLowerCase() === "input") {
+      event.target[x].value = ""
+    }
+  }
+}
+
 // 1 - Funcion
 // Mostrar en un mensaje de alerta los valores del form
 function addTaskAlert(newTask) {
