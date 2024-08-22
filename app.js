@@ -48,6 +48,7 @@ let currentIdNumber = tasks.length;
 function createTaskComponent(task) {
   const taskElement = document.createElement('li')
   taskElement.id = taskElement.id; taskElement.className = "task"
+  taskElement.setAttribute("onclick", "deleteTaskHandler(event);")
 
   taskElement.innerHTML = `
     <img src="${task.imgUrl}" />
