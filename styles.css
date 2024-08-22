@@ -46,6 +46,10 @@ h2{
   justify-content: space-between;
 }
 
+.main-section__taskboard > li {
+  cursor: pointer;
+}
+
 .main__form{
   display: flex;
   flex-direction: column;
