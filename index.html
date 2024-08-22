@@ -17,7 +17,7 @@
         </div>
         <ul class="main-section__taskboard"></ul>
       </section>
-      <form class="main__form">
+      <form class="main__form" onsubmit="addTaskHandler(event)">
         <div class="main__form__body">
           <h2>Task Manager 📝</h2>
           <h3>Please, fill the form and add a task...</h3>
@@ -51,7 +51,7 @@
           <br />
         </div>
         <div class="main__form__buttons">
-          <button type="submit" class="submit-button" onclick="addTaskHandler();">Add Task</button>
+          <button type="submit" class="submit-button">Add Task</button>
           <button class="clear-button" onclick="deleteAllTaskHandler();">Clear Tasks</button>
         </div>
       </form>
