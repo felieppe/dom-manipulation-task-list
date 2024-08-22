@@ -69,7 +69,9 @@ function loadTasks() {}
 
 // 1 - Funcion
 // Mostrar en un mensaje de alerta los valores del form
-function addTaskAlert(newTask) {}
+function addTaskAlert(newTask) {
+  return alert(`Task Name: ${newTask.name}\nTask Owner: ${newTask.owner}\nTask Description: ${newTask.description}\nTask Image URL: ${newTask.image}`)
+}
 
 // 2 - Funcion
 // Agregar elemento en la lista al llenar el formulario
