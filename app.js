@@ -107,7 +107,14 @@ function deleteTaskHandler(taskElement) {}
 
 // 4 - Funcion
 // Crear un boton para vaciar/eliminar todas las tareas
-function deleteAllTaskHandler() {}
+function deleteAllTaskHandler() {
+  let taskboard = document.querySelector(".main-section__taskboard")
+
+  if (!taskboard.innerHTML === "") {
+    taskboard.innerHTML = ''
+    return alert("¡Se han eliminado todas las tareas!")
+  } else { return alert("No hay tareas para eliminar")}
+}
 
 // 5 - Funcion
 // Si ya no quedan tareas navegar programaticamente
