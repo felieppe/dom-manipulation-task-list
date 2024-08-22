@@ -45,7 +45,25 @@ let currentIdNumber = tasks.length;
 // 0 - Bajar repo, todos los ejercicios seran parte
 // del mismo proyecto js-dom-manipulation-essentials
 // Hacer una funcion que cree dinamicamente las task
-function createTaskComponent(task) {}
+function createTaskComponent(task) {
+  const taskElement = document.createElement('li')
+  taskElement.id = taskElement.id; taskElement.className = "task"
+
+  taskElement.innerHTML = `
+    <img src="${task.image}" />
+    <div class="task-information">
+      <h3>Task Owner</h3>
+      <p>${task.owner}</p>
+
+      <h3>Task Name</h3>
+      <p>${task.name}</p>
+
+      <h3>Task Description</h3>
+      <p>${task.description}</p>
+    </div>
+  `
+  return taskElement;
+}
 
 function loadTasks() {}
 
