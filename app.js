@@ -50,7 +50,7 @@ function createTaskComponent(task) {
   taskElement.id = taskElement.id; taskElement.className = "task"
 
   taskElement.innerHTML = `
-    <img src="${task.image}" />
+    <img src="${task.imgUrl}" />
     <div class="task-information">
       <h3>Task Owner</h3>
       <p>${task.owner}</p>
@@ -70,13 +70,28 @@ function loadTasks() {}
 // 1 - Funcion
 // Mostrar en un mensaje de alerta los valores del form
 function addTaskAlert(newTask) {
-  return alert(`Task Name: ${newTask.name}\nTask Owner: ${newTask.owner}\nTask Description: ${newTask.description}\nTask Image URL: ${newTask.image}`)
+  return alert(`Task Name: ${newTask.name}\nTask Owner: ${newTask.owner}\nTask Description: ${newTask.description}\nTask Image URL: ${newTask.imgUrl}`)
 }
 
 // 2 - Funcion
 // Agregar elemento en la lista al llenar el formulario
 
-function addTaskHandler(event) {}
+function addTaskHandler(event) {
+  event.preventDefault();
+  
+  const newTask = {
+    id: currentIdNumber,
+    owner: event.target[0].value,
+    name: event.target[1].value,
+    description: event.target[2].value,
+    imgUrl: event.target[3].value
+  }
+
+  console.log(createTaskComponent(newTask))
+  document.querySelector(".main-section__taskboard").appendChild(createTaskComponent(newTask))
+
+  clearFormInputs(event)
+}
 
 // 3 - Funcion
 // Eliminar elemento en la lista al hacer click sobre el elemento
