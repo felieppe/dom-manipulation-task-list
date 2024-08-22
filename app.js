@@ -110,10 +110,8 @@ function addTaskHandler(event) {
 // 3 - Funcion
 // Eliminar elemento en la lista al hacer click sobre el elemento
 function deleteTaskHandler(taskElement) {
-  let task = taskElement.target
-
-  console.log("Removing task ID: " + task.id)
-
+  let task = taskElement.target.closest('li')
+  
   tasks = tasks.filter(t => t.id !== parseInt(task.id))
   document.querySelector(".main-section__taskboard").removeChild(task)
 
