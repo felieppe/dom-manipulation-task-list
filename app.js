@@ -112,8 +112,12 @@ function addTaskHandler(event) {
 function deleteTaskHandler(taskElement) {
   let task = taskElement.target
 
-  tasks.splice(task.id, 1)
+  console.log("Removing task ID: " + task.id)
+
+  tasks = tasks.filter(t => t.id !== parseInt(task.id))
   document.querySelector(".main-section__taskboard").removeChild(task)
+
+  redirectWhenNoTask()
 }
 
 // 4 - Funcion
@@ -123,11 +127,19 @@ function deleteAllTaskHandler() {
 
   if (!taskboard.innerHTML === "") {
     taskboard.innerHTML = ''
-    return alert("¡Se han eliminado todas las tareas!")
-  } else { return alert("No hay tareas para eliminar")}
+    alert("¡Se han eliminado todas las tareas!")
+  } else { alert("No hay tareas para eliminar")}
+
+  redirectWhenNoTask()
 }
 
 // 5 - Funcion
 // Si ya no quedan tareas navegar programaticamente
 // a www.youtube.com
-function redirectWhenNoTask() {}
+function redirectWhenNoTask() {
+  console.log("RedirectWhenNoTask: " + tasks.length, tasks)
+  if (tasks.length === 0) { 
+    alert("No quedan tareas, redirigiendo a Youtube...");
+    window.location.href = "https://www.youtube.com/";
+  }
+}
