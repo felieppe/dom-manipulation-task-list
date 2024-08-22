@@ -106,7 +106,12 @@ function addTaskHandler(event) {
 
 // 3 - Funcion
 // Eliminar elemento en la lista al hacer click sobre el elemento
-function deleteTaskHandler(taskElement) {}
+function deleteTaskHandler(taskElement) {
+  let task = taskElement.target
+
+  tasks.splice(task.id, 1)
+  document.querySelector(".main-section__taskboard").removeChild(task)
+}
 
 // 4 - Funcion
 // Crear un boton para vaciar/eliminar todas las tareas
